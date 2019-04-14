@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>これは「自分で書く、型定義ファイル」のデモページです。</title>
+    <style>
+      body {
+        margin: 32px;
+        color: #555;
+        font-size: 14px;
+      }
+      pre {
+        padding: 16px;
+        background-color: #000;
+        color: #ddd;
+      }
+      h1 {
+        padding: 16px 0;
+        border-bottom: solid 1px #aaa;
+      }
+      .toc {
+        color: #ccc;
+      }
+      .toc a,
+      .toc a:visited {
+        color: #0055aa;
+        text-decoration: none;
+      }
+      .toc-3{
+        margin-left: 16px;
+      }
+      .toc-4{
+        margin-left: 32px;
+      }
+    </style>
+  </head>
+  <bod>
+    <h1>TOC Module Library</h1>
+
+<div data-js-toc class="toc"></div>
+
+<article>
+  <h2>はじめに</h2>
+
+  <p>これは「自分で書く、型定義ファイル」のデモページです。</p>
+
+  <h2>使い方</h2>
+
+  <h3>ライブラリのインポート</h3>
+  <p>ES modules 形式で実装されているため、次のようにライブラリ本体と型を import します。</p>
+  <pre><code>import Toc, { TocList } from './lib/toc';</code></pre>
+
+  <h3>目次情報の取得</h3>
+
+  <p>Toc.getTocList() メソッドを使用し次のように取得できます。</p>
+
+  <h4>getTocList</h4>
+  <pre><code>const target = document.querySelector('article') as HTMLElement;
+const tocList: TocList = Toc.getTocList(target);</code></pre>
+
+  <h4>result</h4>
+  <pre><code data-js-result-1></code></pre>
+
+  <h3>目次のマークアップの取得</h3>
+
+  <p>Toc.getTocHtml() メソッドを使用し次のように取得できます。</p>
+
+  <h4>getTocHtml</h4>
+  <pre><code>const target = document.querySelector('article') as HTMLElement;
+const tocHtml: string = Toc.getTocHtml(target);</code></pre>
+
+  <h4>result</h4>
+  <pre><code data-js-result-2></code></pre>
+
+</article>
+
+    <script src="assets/index.bundle.js"></script>
+  </bod>
+</html>
